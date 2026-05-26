@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Warung Makan Balik Maning</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f8f8f8;
+      color:#333;
+    }
+
+    /* HEADER */
+
+    header{
+
+      background:
+      linear-gradient(rgba(0,0,0,0.65),
+      rgba(0,0,0,0.65)),
+      url('images/bg-kumpulan-menu.jpg');
+
+      background-size:cover;
+      background-position:center;
+
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+      color:white;
+
+      padding:20px;
+    }
+
+    .overlay{
+      max-width:850px;
+      animation:fadeIn 1.5s ease;
+    }
+
+    header h1{
+      font-size:68px;
+      font-weight:800;
+      margin-bottom:15px;
+
+      text-shadow:3px 3px 15px rgba(0,0,0,0.5);
+    }
+
+    header p{
+      font-size:22px;
+      margin-bottom:20px;
+      font-weight:300;
+    }
+
+    .jam{
+      display:inline-block;
+
+      background:#ff7b00;
+
+      padding:12px 22px;
+
+      border-radius:40px;
+
+      font-weight:600;
+
+      margin-bottom:15px;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .alamat{
+      margin-top:10px;
+
+      font-size:18px;
+
+      background:rgba(255,255,255,0.15);
+
+      padding:12px 20px;
+
+      border-radius:14px;
+
+      backdrop-filter:blur(6px);
+    }
+
+    /* MENU */
+
+    .menu{
+      padding:70px 25px;
+    }
+
+    .menu h2{
+      text-align:center;
+      font-size:42px;
+      color:#ff6600;
+      margin-bottom:45px;
+      font-weight:700;
+    }
+
+    .menu-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .card{
+      background:white;
+      border-radius:22px;
+      overflow:hidden;
+
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.02);
+
+      box-shadow:0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+      text-align:center;
+    }
+
+    .card h3{
+      font-size:24px;
+      color:#ff6600;
+      margin-bottom:10px;
+    }
+
+    .harga{
+      font-size:19px;
+      font-weight:600;
+      margin-bottom:18px;
+      color:#444;
+    }
+
+    .pesan-btn{
+      display:inline-block;
+
+      text-decoration:none;
+
+      background:#25D366;
+      color:white;
+
+      padding:13px 22px;
+
+      border-radius:14px;
+
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .pesan-btn:hover{
+      background:#1ebe5d;
+      transform:scale(1.05);
+    }
+
+    /* SOSIAL MEDIA */
+
+    .sosial-media{
+      text-align:center;
+      padding:60px 20px;
+      background:white;
+    }
+
+    .sosial-media h2{
+      color:#ff6600;
+      font-size:38px;
+      margin-bottom:25px;
+    }
+
+    .instagram{
+      text-decoration:none;
+
+      background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+
+      color:white;
+
+      padding:15px 28px;
+
+      border-radius:14px;
+
+      font-weight:600;
+
+      display:inline-block;
+
+      transition:0.3s;
+    }
+
+    .instagram:hover{
+      transform:scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:22px;
+      font-size:15px;
+    }
+
+    /* ANIMASI */
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:42px;
+      }
+
+      header p{
+        font-size:18px;
+      }
+
+      .menu h2{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="overlay">
+
+      <h1>Warung Makan Balik Maning</h1>
+
+      <p>
+        Masakan Enak, Harga Bersahabat, Siap Mengenyangkan Harimu 🍜🔥
+      </p>
+
+      <div class="jam">
+        🕕 Buka 06:00 • Tutup 15:00
+      </div>
+
+      <div class="alamat">
+        📍 Jalan Trans Pulau Rimau, Desa Wonosari blok B
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MENU -->
+
+  <section class="menu">
+
+    <h2>🍽 Daftar Menu Favorit</h2>
+
+    <div class="menu-container">
+
+      <!-- Nasi Ayam -->
+      <div class="card">
+        <img src="images/nasi-ayam.jpg" alt="Nasi Ayam">
+
+        <div class="card-content">
+          <h3>Nasi Ayam</h3>
+          <p class="harga">Rp15.000</p>
+
+          <a href="https://wa.me/6282186359518" target="_blank" class="pesan-btn">
+            Pesan Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Pangsit Gorengan -->
+      <div class="card">
+        <img src="images/pangsit-goreng.jpg" alt="Pangsit Goreng">
+
+        <div class="card-content">
+          <h3>Pangsit Gorengan</h3>
+          <p class="harga">Rp1.000</p>
+
+          <a href="https://wa.me/6282186359518" target="_blank" class="pesan-btn">
+            Pesan Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Ayam Bakar -->
+      <div class="card">
+        <img src="images/ayam-bakar.jpg" alt="Ayam Bakar">
+
+        <div class="card-content">
+          <h3>Ayam Bakar</h3>
+          <p class="harga">Rp20.000</p>
+
+          <a href="https://wa.me/6282186359518" target="_blank" class="pesan-btn">
+            Pesan Sekarang
+          </a>
+        </
